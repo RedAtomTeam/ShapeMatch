@@ -5,12 +5,12 @@ public class Shape : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _shape;
     [SerializeField] private SpriteRenderer _outline;
-    public readonly Shapes shapeType;
 
-    public void SetOutlineColor(Color color)
-    {
-        _outline.color = color;
-    }
+    public Sprite ShapeSprite { get => _shape.sprite; private set => _shape.sprite = value; }
+    public Sprite OutlineSprite { get => _outline.sprite; private set => _outline.sprite = value; }
+
+    public Color OutlineColor { get => _outline.color; set => _outline.color = value; }
+
 
     public Bounds GetBounds()
     {
@@ -55,7 +55,6 @@ public class Shape : MonoBehaviour
         }
         else if (collider is PolygonCollider2D poly)
         {
-            // Для PolygonCollider2D придётся вычислять вручную
             Vector2 min = new Vector2(float.MaxValue, float.MaxValue);
             Vector2 max = new Vector2(float.MinValue, float.MinValue);
 

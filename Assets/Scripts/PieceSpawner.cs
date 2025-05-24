@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class PieceSpawner : MonoBehaviour
 {
-    [SerializeField] private Button refreshButton;
 
     [Header("Spawn Settings")]
     [SerializeField] private float width = 10f; 
@@ -24,17 +23,28 @@ public class PieceSpawner : MonoBehaviour
     [SerializeField] private List<Sprite> _icons = new List<Sprite>();
     [SerializeField] private List<Color> _colors = new List<Color>();
 
+    [Header("Dependencies")]
+    [SerializeField] private ActionBar _actionBar;
+    [SerializeField] private Button refreshButton;
+
     private List<Piece> _pieces; 
     private readonly Collider2D[] _obstacles = new Collider2D[32];
 
-
     public event Action startSpawn;
     public event Action spawnIsDone;
+    public event Action piecesOver;
 
 
-    public bool Spawn(Color color, Shape shape, Sprite icon)
+    private void Start()
     {
+        _pieces = new List<Piece>(_shapes.Count * _icons.Count * _colors.Count * _uniqueElementCount);
+        spawnIsDone += AddRefreshListenerToButton;
+        startSpawn += RemoveRefreshListenerToButton;
+        StartCoroutine(SpawnObjects());
+    }
 
+    private bool Spawn(Color color, Shape shape, Sprite icon)
+    {
         var objectBound = shape.GetBounds();
 
         Vector3 spawnPosition = transform.position;
@@ -57,19 +67,18 @@ public class PieceSpawner : MonoBehaviour
         if (Physics2D.OverlapAreaNonAlloc(pointA, pointB, _obstacles, _obstacleLayerMask) > 0)
         {
             return false;
-
         }
 
         var spawnedPiece = Instantiate(pref, transform);
         spawnedPiece.gameObject.transform.position = spawnPosition;
-        spawnedPiece.Init(color, shape, icon, this);
+        spawnedPiece.Init(color, shape, icon, this, _actionBar);
 
         _pieces.Add(spawnedPiece);
 
         return true;
     }
 
-    public bool Spawn(Piece piece)
+    private bool Spawn(Piece piece)
     {
         var objectBound = piece.GetBounds();
 
@@ -95,17 +104,8 @@ public class PieceSpawner : MonoBehaviour
         piece.gameObject.transform.position = spawnPosition;
         piece.gameObject.SetActive(true);
         return true;
-
     }
 
-    private void Start()
-    {
-        spawnIsDone += AddRefreshListenerToButton;
-        startSpawn += RemoveRefreshListenerToButton;
-
-        _pieces = new List<Piece>(_shapes.Count * _icons.Count * _colors.Count * _uniqueElementCount);
-        StartCoroutine(SpawnObjects());
-    }
 
     private IEnumerator SpawnObjects()
     {
@@ -128,7 +128,6 @@ public class PieceSpawner : MonoBehaviour
                 }
             }
         }
-
         spawnIsDone?.Invoke();
     }
 
@@ -147,8 +146,10 @@ public class PieceSpawner : MonoBehaviour
         StartCoroutine(Refresh());
     }
 
+    #if UNITY_EDITOR
     [Button]
-    public IEnumerator Refresh()
+    #endif
+    private IEnumerator Refresh()
     {
         startSpawn?.Invoke();
         foreach(Piece piece in _pieces)
@@ -170,11 +171,21 @@ public class PieceSpawner : MonoBehaviour
         spawnIsDone?.Invoke();
     }
 
-    
+    public void Remove(Piece piece)
+    {
+        _pieces.Remove(piece);
+        if(_pieces.Count == 0)
+        {
+            piecesOver?.Invoke();
+        }
+    }
+
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position, new Vector3(width, height, 0f));
         Gizmos.DrawCube(transform.position, new Vector3(width, height, 0.1f));
     }
+    #endif
 }
