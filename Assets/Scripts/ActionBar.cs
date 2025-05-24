@@ -131,14 +131,7 @@ public class ActionBar : MonoBehaviour
     {
         ParseAndRemoveSame();
         if (_firstEmptyIndex >= _elementsCount)
-        {
             Loose();
-        }
-    }
-
-    private void Win()
-    {
-        looseEvent?.Invoke();
     }
 
     private void Loose()
