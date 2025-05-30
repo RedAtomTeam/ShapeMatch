@@ -4,12 +4,16 @@ using UnityEngine;
 public class Shape : MonoBehaviour 
 {
     [SerializeField] private SpriteRenderer _shape;
-    [SerializeField] private SpriteRenderer _outline;
+    [SerializeField] private SpriteRenderer _insideOutline;
+    [SerializeField] private SpriteRenderer _outsideOutline;
 
     public Sprite ShapeSprite { get => _shape.sprite; private set => _shape.sprite = value; }
-    public Sprite OutlineSprite { get => _outline.sprite; private set => _outline.sprite = value; }
+    public Color InsideColor { get => _shape.color; set => _shape.color = value; }
+    public Sprite InsideOutlineSprite { get => _insideOutline.sprite; private set => _insideOutline.sprite = value; }
+    public Sprite OutsideOutlineSprite { get => _outsideOutline.sprite; private set => _outsideOutline.sprite = value; }
 
-    public Color OutlineColor { get => _outline.color; set => _outline.color = value; }
+    public Color InsideOutlineColor { get => _insideOutline.color; set => _insideOutline.color = value; }
+    public Color OutsideOutlineColor { get => _outsideOutline.color; set => _outsideOutline.color = value; }
 
 
     public Bounds GetBounds()

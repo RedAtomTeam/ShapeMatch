@@ -12,6 +12,8 @@ public class ActionBar : MonoBehaviour
     [SerializeField] private int _elementsLineLengthToParse;
 
     [SerializeField] private Color _disactiveElementColor;
+    [SerializeField] private Color _disactiveElementInsideOutlineColor;
+    [SerializeField] private Color _disactiveElementOutsideOutlineColor;
     [SerializeField] private Shape _disactiveElementShape;
 
     private List<ActionBar_Element> _actionBarElements;
@@ -148,6 +150,9 @@ public class ActionBar : MonoBehaviour
 
     public void RemoveAt(int index)
     {
-        _actionBarElements[index].Pop(_disactiveElementColor, _disactiveElementShape);
+        _actionBarElements[index].Pop(_disactiveElementColor, 
+                                      _disactiveElementInsideOutlineColor, 
+                                      _disactiveElementOutsideOutlineColor, 
+                                      _disactiveElementShape);
     } 
 }
