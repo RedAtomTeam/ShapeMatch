@@ -720,6 +720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 733010148}
   - component: {fileID: 733010149}
+  - component: {fileID: 733010150}
   m_Layer: 5
   m_Name: ActionBar
   m_TagString: Untagged
@@ -767,6 +768,20 @@ MonoBehaviour:
   _disactiveElementInsideOutlineColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
   _disactiveElementOutsideOutlineColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
   _disactiveElementShape: {fileID: 6162381434726904699, guid: 62ce0db3f17495e42af2d8c6f1ea7750, type: 3}
+--- !u!114 &733010150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733010147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb6b34ad75084a478a85ceb45bffcfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionBar: {fileID: 733010149}
+  _levelsConfig: {fileID: 11400000, guid: c37f862da9d4bab4aaa75a0341c1d9c6, type: 2}
 --- !u!1 &787423913
 GameObject:
   m_ObjectHideFlags: 0
