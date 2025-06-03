@@ -796,6 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa32adc2eca999d4396ace2ff3484ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawner: {fileID: 1445971370}
   _actionBarField: {fileID: 787423914}
   _elementPrefab: {fileID: 7294424340220539651, guid: 8052ab75863f1d645ac2fe4a65867b60, type: 3}
   _elementsCount: 5
@@ -817,7 +818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionBar: {fileID: 733010149}
-  _levelsConfig: {fileID: 11400000, guid: c37f862da9d4bab4aaa75a0341c1d9c6, type: 2}
 --- !u!1 &787423913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdd05167cdeae449b0b7ee32423e093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showAd: 1
 --- !u!114 &1275041492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,6 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdd05167cdeae449b0b7ee32423e093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showAd: 1
 --- !u!114 &1618715566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,6 +1857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdd05167cdeae449b0b7ee32423e093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showAd: 1
 --- !u!114 &1787500542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2000,6 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdd05167cdeae449b0b7ee32423e093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showAd: 1
 --- !u!114 &1870752869
 MonoBehaviour:
   m_ObjectHideFlags: 0

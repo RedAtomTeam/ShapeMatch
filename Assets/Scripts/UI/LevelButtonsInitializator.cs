@@ -9,6 +9,7 @@ public class LevelButtonsInitializator : MonoBehaviour
     [SerializeField] private Image _image;
 
     [SerializeField] private int _levelId;
+    
 
     [SerializeField] private Color _openLevelColor;
     [SerializeField] private Color _closeLevelColor;

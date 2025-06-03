@@ -17,7 +17,6 @@ public class SaveInitializator : MonoBehaviour
                 if (_levelsConfig.levels[i].id == YandexGame.savesData.levels[j].id)
                 {
                     isContains = true;
-                    
                     break;
                 }
             }

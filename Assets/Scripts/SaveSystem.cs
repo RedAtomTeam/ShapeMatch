@@ -14,9 +14,13 @@ public class SaveSystem : MonoBehaviour
     public void SaveWinLevel()
     {
         string currentScene = gameObject.scene.name;
-
         foreach (var level in YandexGame.savesData.levels)
+        {
             if (level.sceneName == currentScene)
+            {
                 level.status = 1;
+                YandexGame.SaveProgress();
+            }
+        }
     }
 }

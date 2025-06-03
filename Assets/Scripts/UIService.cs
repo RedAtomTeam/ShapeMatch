@@ -14,15 +14,6 @@ public class UIService : MonoBehaviour
     {
         _actionBar.winEvent += WinWindowOpen;
         _actionBar.looseEvent += LooseWindowOpen;
-        _pieceSpawner.piecesOver += PiecesOver;
-    }
-
-    private void PiecesOver() 
-    {
-        if (_actionBar.IsEmpty)
-            WinWindowOpen();
-        else
-            LooseWindowOpen();
     }
 
 

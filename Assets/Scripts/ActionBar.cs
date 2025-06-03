@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionBar : MonoBehaviour
 {
+    [SerializeField] private PieceSpawner _spawner;
+    
     [SerializeField] private RectTransform _actionBarField;
     [SerializeField] private ActionBar_Element _elementPrefab;
     [Range(5, 10)]
@@ -36,17 +38,24 @@ public class ActionBar : MonoBehaviour
     public event Action winEvent;
     public event Action looseEvent;
     private event Action addElement;
-    
-
 
 
     private void Start()
     {
         addElement += CheckAfterAdd;
+        _spawner.piecesOver += PiecesOver;
         _actionBarElements = new List<ActionBar_Element>(_elementsCount);
         CreateAndDistributeElements();
     }
 
+    private void PiecesOver()
+    {
+        if (IsEmpty)
+            winEvent?.Invoke();
+        else
+            looseEvent?.Invoke();
+    }
+    
     private void CreateAndDistributeElements()
     {
         foreach (var element in _actionBarElements)
