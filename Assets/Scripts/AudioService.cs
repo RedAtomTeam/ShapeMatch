@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class AudioService : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class AudioService : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             Init();
+
+            YandexGame.OpenFullAdEvent += SoundPause;
+            YandexGame.CloseFullAdEvent += SoundUnPause;
+
+            YandexGame.onHideWindowGame += SoundPause;
+            YandexGame.onShowWindowGame += SoundUnPause;
+
         }
         else
         {
@@ -57,14 +65,13 @@ public class AudioService : MonoBehaviour
     {
         _currentClipIndex = _currentClipIndex + 1 >= _clips.Count ? 0 : _currentClipIndex + 1;
         _soundtracksSource.clip = _clips[_currentClipIndex];
+        _soundtracksSource.Play();
     }
 
     private bool IsTrackEnd()
     {
-        if (((_soundtracksSource.clip.length - _soundtracksSource.time) < 0.5f))
-        {
+        if (((_soundtracksSource.clip.length - _soundtracksSource.time) < 5f))
             return true;
-        }
         return false;
     }
 
@@ -72,5 +79,15 @@ public class AudioService : MonoBehaviour
     {
         _soundEffectsSource.PlayOneShot(clip);
     } 
+
+    public void SoundPause()
+    {
+        _soundtracksSource.Pause();
+    }
+
+    public void SoundUnPause()
+    {
+        _soundtracksSource.UnPause();
+    }
 
 }

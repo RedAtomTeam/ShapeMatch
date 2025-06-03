@@ -1,9 +1,9 @@
 using UnityEngine;
+using YG;
 
 public class SaveSystem : MonoBehaviour
 {
     [SerializeField] private ActionBar _actionBar;
-    [SerializeField] private LevelsConfig _levelsConfig;
 
 
     private void Start()
@@ -15,7 +15,7 @@ public class SaveSystem : MonoBehaviour
     {
         string currentScene = gameObject.scene.name;
 
-        foreach (var level in _levelsConfig.levels)
+        foreach (var level in YandexGame.savesData.levels)
             if (level.sceneName == currentScene)
                 level.status = 1;
     }

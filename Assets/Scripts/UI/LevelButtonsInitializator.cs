@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 
 public class LevelButtonsInitializator : MonoBehaviour
 {
     [SerializeField] private Button _button;
     [SerializeField] private Image _image;
 
-    [SerializeField] private LevelsConfig _levelsConfig;
     [SerializeField] private int _levelId;
 
     [SerializeField] private Color _openLevelColor;
@@ -44,10 +44,9 @@ public class LevelButtonsInitializator : MonoBehaviour
     {
         string levelName = "";
 
-        foreach (var level in _levelsConfig.levels)
+        foreach (var level in YandexGame.savesData.levels)
             if (level.id == _levelId) 
                 levelName = level.sceneName;
-        print(levelName);
         SceneManager.LoadSceneAsync(levelName);
     }
 
@@ -56,7 +55,7 @@ public class LevelButtonsInitializator : MonoBehaviour
         if (_levelId == 0)
             return true;
 
-        foreach (var level in _levelsConfig.levels)
+        foreach (var level in YandexGame.savesData.levels)
         {
             if (level.id == _levelId - 1)
                 return level.status == 1;
