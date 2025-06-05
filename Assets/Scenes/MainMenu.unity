@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 150124957}
   - component: {fileID: 150124956}
   - component: {fileID: 150124955}
+  - component: {fileID: 150124958}
   m_Layer: 5
   m_Name: Settings_Button
   m_TagString: Untagged
@@ -444,7 +445,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 567960712}
+      - m_Target: {fileID: 1187353124}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -456,10 +457,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1599788040}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 150124958}
+        m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
+        m_MethodName: SwitchTabs
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -506,6 +507,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150124953}
   m_CullTransparentMesh: 1
+--- !u!114 &150124958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150124953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e46d5bb44539e9429cf771c01dbba97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstTabRectTransform: {fileID: 1599788041}
+  _secondTabRectTransform: {fileID: 1187353125}
+  _time: 0.4
 --- !u!1 &195356766
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +849,7 @@ GameObject:
   - component: {fileID: 254774000}
   - component: {fileID: 254773999}
   - component: {fileID: 254773998}
+  - component: {fileID: 254774001}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -903,18 +920,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 567960712}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1599788040}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -926,6 +931,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 254774001}
+        m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
+        m_MethodName: SwitchTabs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &254773999
 MonoBehaviour:
@@ -965,6 +982,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254773996}
   m_CullTransparentMesh: 1
+--- !u!114 &254774001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254773996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e46d5bb44539e9429cf771c01dbba97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstTabRectTransform: {fileID: 1187353125}
+  _secondTabRectTransform: {fileID: 1599788041}
+  _time: 0.4
 --- !u!1 &285006107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,6 +1354,7 @@ GameObject:
   - component: {fileID: 374156319}
   - component: {fileID: 374156318}
   - component: {fileID: 374156317}
+  - component: {fileID: 374156320}
   m_Layer: 5
   m_Name: Levels_Button
   m_TagString: Untagged
@@ -1404,10 +1437,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1599788040}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 374156320}
+        m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
+        m_MethodName: SwitchTabs
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1454,6 +1487,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374156315}
   m_CullTransparentMesh: 1
+--- !u!114 &374156320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374156315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e46d5bb44539e9429cf771c01dbba97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstTabRectTransform: {fileID: 1599788041}
+  _secondTabRectTransform: {fileID: 1058552073}
+  _time: 0.4
 --- !u!1 &411029786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &567960713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2214,7 +2262,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567960712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2222,7 +2270,7 @@ RectTransform:
   - {fileID: 1226244224}
   - {fileID: 1960951453}
   - {fileID: 254773997}
-  m_Father: {fileID: 1900094207}
+  m_Father: {fileID: 1187353125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3302,10 +3350,10 @@ RectTransform:
   - {fileID: 1742506584}
   m_Father: {fileID: 38654502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -2940}
+  m_SizeDelta: {x: 1440, y: 2960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1064469493
 GameObject:
@@ -3764,6 +3812,42 @@ MonoBehaviour:
   _levelId: 5
   _openLevelColor: {r: 1, g: 1, b: 1, a: 1}
   _closeLevelColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+--- !u!1 &1187353124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187353125}
+  m_Layer: 5
+  m_Name: Field
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1187353125
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187353124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 567960713}
+  m_Father: {fileID: 1900094207}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1440, y: 0}
+  m_SizeDelta: {x: 1440, y: 2960}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1226244223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,7 +4155,9 @@ MonoBehaviour:
   - {fileID: 1602706391}
   - {fileID: 1741831850}
   - {fileID: 1131997717}
+  _tabsPositions: []
   _selectedTabIndex: 0
+  _changeTabTime: 0.2
 --- !u!1 &1313229622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4885,6 +4971,7 @@ GameObject:
   - component: {fileID: 1566271131}
   - component: {fileID: 1566271130}
   - component: {fileID: 1566271129}
+  - component: {fileID: 1566271132}
   m_Layer: 5
   m_Name: Exit_Button
   m_TagString: Untagged
@@ -4955,18 +5042,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1058552072}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1599788040}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -4978,6 +5053,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1566271132}
+        m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
+        m_MethodName: SwitchTabs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1288452602}
+        m_TargetAssemblyTypeName: LevelField_Switch, Assembly-CSharp
+        m_MethodName: DefaultPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1566271130
 MonoBehaviour:
@@ -5017,6 +5116,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566271127}
   m_CullTransparentMesh: 1
+--- !u!114 &1566271132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566271127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e46d5bb44539e9429cf771c01dbba97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstTabRectTransform: {fileID: 1058552073}
+  _secondTabRectTransform: {fileID: 1599788041}
+  _time: 0.4
 --- !u!1 &1599788040
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,10 +5165,10 @@ RectTransform:
   - {fileID: 1064469494}
   m_Father: {fileID: 2056947926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1440, y: 2960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1602706390
 GameObject:
@@ -5518,7 +5632,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 567960713}
+  - {fileID: 1187353125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
