@@ -17,7 +17,10 @@ public class LevelField_Switch : MonoBehaviour
     private void Awake()
     {
         for (int i = 0; i < _tabs.Count; i++)
+        {
             _tabsPositions.Add(_tabs[i].anchoredPosition);
+            print(_tabs[i].anchoredPosition);
+        }
     }
 
     private void OnEnable()
@@ -37,15 +40,20 @@ public class LevelField_Switch : MonoBehaviour
     {
         _selectedTabIndex = 0;
         for (int i = 0; i < _tabs.Count; i++)
-            _tabs[i].anchoredPosition = _tabsPositions[i];
+        {
+            _tabs[i].anchoredPosition = new Vector3(_tabsPositions[i].x, 0, 0);
+            print(_tabs[i].anchoredPosition);
+        }
     }
 
     private void SwitchTabLeft()
     {
         _switchTabLeftButton.onClick.RemoveListener(SwitchTabLeft);
         Tween tween = null;
-        foreach (var tab in _tabs)
-            tween = tab.DOMove(tab.position + new Vector3(tab.rect.width, 0, 0), _changeTabTime);
+        for (int i = 0; i < _tabs.Count; i++)
+        {
+            tween = _tabs[i].DOAnchorPos(_tabsPositions[i - _selectedTabIndex <= -1 ? _selectedTabIndex - i - 1 : i - _selectedTabIndex + 1], _changeTabTime);
+        }                                               
         if (tween is not null)
             tween.OnComplete(() => { _switchTabLeftButton.onClick.AddListener(SwitchTabLeft); });
         _selectedTabIndex--;
@@ -56,8 +64,10 @@ public class LevelField_Switch : MonoBehaviour
     {
         _switchTabRightButton.onClick.RemoveListener(SwitchTabRight);
         Tween tween = null;
-        foreach (var tab in _tabs)
-            tween = tab.DOMove(tab.position - new Vector3(tab.rect.width, 0, 0), _changeTabTime);
+        for (int i = 0; i < _tabs.Count; i++)
+        {
+            tween = _tabs[i].DOAnchorPos(_tabsPositions[i - _selectedTabIndex <= 0 ? _tabsPositions.Count - 1 - _selectedTabIndex : i - _selectedTabIndex - 1], _changeTabTime);
+        }
         if (tween is not null)
             tween.OnComplete(() => { _switchTabRightButton.onClick.AddListener(SwitchTabRight);});
         _selectedTabIndex++;
