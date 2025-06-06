@@ -14,7 +14,7 @@ public class LevelButtonsInitializator : MonoBehaviour
     [SerializeField] private Color _openLevelColor;
     [SerializeField] private Color _closeLevelColor;
 
-    private void Start()
+    private void Awake()
     {
         _button = GetComponent<Button>();
         _image = GetComponent<Image>();

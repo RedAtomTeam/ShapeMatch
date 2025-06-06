@@ -1,0 +1,105 @@
+{
+    "idSave": 3,
+    "isFirstSession": false,
+    "language": "ru",
+    "promptDone": false,
+    "money": 1,
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ],
+    "levels": [
+        {
+            "id": 0,
+            "sceneName": "Level_1",
+            "status": 1
+        },
+        {
+            "id": 1,
+            "sceneName": "Level_2",
+            "status": 1
+        },
+        {
+            "id": 2,
+            "sceneName": "Level_3",
+            "status": 0
+        },
+        {
+            "id": 3,
+            "sceneName": "Level_4",
+            "status": 0
+        },
+        {
+            "id": 4,
+            "sceneName": "Level_5",
+            "status": 0
+        },
+        {
+            "id": 5,
+            "sceneName": "Level_6",
+            "status": 0
+        },
+        {
+            "id": 6,
+            "sceneName": "Level_7",
+            "status": 0
+        },
+        {
+            "id": 7,
+            "sceneName": "Level_8",
+            "status": 0
+        },
+        {
+            "id": 8,
+            "sceneName": "Level_9",
+            "status": 0
+        },
+        {
+            "id": 9,
+            "sceneName": "Level_10",
+            "status": 0
+        },
+        {
+            "id": 10,
+            "sceneName": "Level_11",
+            "status": 0
+        },
+        {
+            "id": 11,
+            "sceneName": "Level_12",
+            "status": 0
+        },
+        {
+            "id": 12,
+            "sceneName": "Level_13",
+            "status": 0
+        },
+        {
+            "id": 13,
+            "sceneName": "Level_14",
+            "status": 0
+        },
+        {
+            "id": 14,
+            "sceneName": "Level_15",
+            "status": 0
+        },
+        {
+            "id": 15,
+            "sceneName": "Level_16",
+            "status": 0
+        },
+        {
+            "id": 16,
+            "sceneName": "Level_17",
+            "status": 0
+        },
+        {
+            "id": 17,
+            "sceneName": "Level_18",
+            "status": 0
+        }
+    ]
+}
